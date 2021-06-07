@@ -1,12 +1,12 @@
 // Отримуємо від користувача строку N, конвертуємо її в число, перевіряємо на NAN
-let n = Number.parseInt(prompt("Please enter First Number", ""));
-while (isNaN(n)) {
-    n = Number(prompt("Please enter First Number AGAIN (not a word!)", ""))
+let n = Number(prompt("Please enter First Number", ""));
+while (isNaN(n)||(!Number.isInteger(n))) {
+    n = Number(prompt("Please enter First Number AGAIN (it must be Integer and not a word)", ""))
 }
 
 // Отримуємо від користувача строку M, конвертуємо її в число, перевіряємо на NAN
-let m = Number.parseInt(prompt("Please enter Second Number", ""));
-while (isNaN(m)||(m<n)) {
+let m = Number(prompt("Please enter Second Number", ""));
+while (isNaN(m)||(m<n)||(!Number.isInteger(m))) {
     m = Number(prompt("Please enter Second Number AGAIN (It must be not a word and bigger than First Number!)", ""))
 }
 
