@@ -6,8 +6,8 @@ while (isNaN(n)) {
 
 // Отримуємо від користувача строку M, конвертуємо її в число, перевіряємо на NAN
 let m = Number.parseInt(prompt("Please enter Second Number", ""));
-while (isNaN(m)) {
-    m = Number(prompt("Please enter Second Number AGAIN (not a word!)", ""))
+while (isNaN(m)||(m<n)) {
+    m = Number(prompt("Please enter Second Number AGAIN (It must be not a word and bigger than First Number!)", ""))
 }
 
 // Запитуємо користувача чи пропускати парні числа
