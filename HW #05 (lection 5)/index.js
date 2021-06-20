@@ -39,7 +39,7 @@ function getModa(...numbers) {
     let maxLength = 0;
     for (let j = 0; j < arrayOfRepeatedNumbers.length; j++) {
         if (arrayOfRepeatedNumbers[j].length > maxLength) {
-            maxLength = 2;
+            maxLength = arrayOfRepeatedNumbers[j].length;
             findIndex = j;
         } else {
             continue;
