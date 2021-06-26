@@ -70,9 +70,9 @@ function getMedian(...numbers) {
 
     const numbersQuantity = numbers.length;
     let median; 
-    if (numbersQuantity % 2 == 0 && numbersQuantity == 2) {
+    if (numbersQuantity % 2 === 0 && numbersQuantity === 2) {
         median = (numbers[0] + numbers[1]) / 2;
-    } else if (numbersQuantity % 2 == 0) {
+    } else if (numbersQuantity % 2 === 0) {
         median = (numbers[(numbersQuantity / 2) - 1] + numbers[numbersQuantity / 2]) / 2;
     } else {
         median = numbers[Math.floor(numbersQuantity / 2)];
@@ -84,23 +84,19 @@ function getMedian(...numbers) {
 // Задача №05 ==========================================================================
 
 function filterEvenNumbers(...numbers) {
-    numbers = numbers.filter(number => number % 2 !== 0);
-    return numbers;
+    return numbers.filter(number => number % 2 !== 0);
 }
 
 // Задача №06 ==========================================================================
 
 function countPositiveNumbers(...numbers) {
-    numbers = numbers.filter(number => number > 0);
-    const positiveNumbersQuantity = numbers.length;
-    return positiveNumbersQuantity;
+    return (numbers.filter(number => number > 0)).length;
 }
 
 // Задача №07 ==========================================================================
 
 function getDividedByFive(...numbers) {
-    numbers = numbers.filter(number => number % 5 == 0);
-    return numbers;
+    return numbers.filter(number => number % 5 === 0);
 }
 
 // Задача №08 ==========================================================================
@@ -110,7 +106,7 @@ function replaceBadWords(string) {
     const stringToArray = string.split(" ");
 
     for (let i = 0; i < badWordsList.length; i++) {
-        let searchedRegExp = badWordsList[i];
+        const searchedRegExp = badWordsList[i];
         let replacedRegExp = [];
         while (replacedRegExp.length < searchedRegExp.length) {
             replacedRegExp.push("*");
@@ -118,7 +114,7 @@ function replaceBadWords(string) {
         replacedRegExp = replacedRegExp.join("");
         
        for (let j = 0; j < stringToArray.length; j++) {
-            let indexOfBadWord = stringToArray[j].indexOf(searchedRegExp);
+            const indexOfBadWord = stringToArray[j].indexOf(searchedRegExp);
             
             if (indexOfBadWord !== -1) {
                 stringToArray[j] = 
