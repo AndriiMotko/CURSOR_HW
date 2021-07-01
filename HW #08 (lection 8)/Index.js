@@ -3,36 +3,82 @@ class Student {
         this.university = university;
         this.course = course;
         this.fullName = fullName;
-        this._marks = marks;
+        this.marks = marks;
+        this.isActiveStudent = true;
     }
 
     getInfo() {
-        return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}.`;
+        if (this.isActiveStudent) {
+            return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}.`;
+        }
+        return `Дана особа не навчається Вищому навчальному закладі.`;
     }
     
-    get marks() {
-        return this._marks;
+    get allMarks() {
+        if (this.isActiveStudent) {return this.marks;}
+        return null;
     }
     
-    set marks(mark) {
-        return this._marks.push(mark);
+    set mark(number) {
+        if (this.isActiveStudent) {return this.marks.push(number);}
+        return null;
     }
 
     getAverageMark() {
-        const marksSum = this._marks.reduce(
+        const marksSum = this.marks.reduce(
             (sum, currentMark) => {return sum + currentMark}, 0);
-        return marksSum / this._marks.length;
+        return marksSum / this.marks.length;
+    }
+
+    dismiss() {
+        this.isActiveStudent = false;
+    }
+
+    recover() {
+        this.isActiveStudent = true;
+    }
+
+}
+
+class BudgetStudent extends Student {
+    constructor (university, course, fullName, marks) {
+        
+        super(university, course, fullName, marks);
+        this.getScholarship = setInterval(() => {
+                if (this.getAverageMark() >= 4 && this.isActiveStudent) {
+                    console.log(`Ви отримали 1400 грн. стипендії.`);
+                }        
+            }, 30000);
     }
 }
+       
 
 const ostap = new Student("Вищої Школи Психотерапії м.Одеса", 1,
                           "Остап Родоманський Бендер", [5, 4, 4, 5]);
 
+const roman = new BudgetStudent("Національного університету Львівська Політехніка", 2,
+                          "Роман Скорик", [5, 5, 5, 5]);
+
 // ============================= РЕЗУЛЬТАТИ ===================================
 
 
-console.log(ostap.getInfo());
-ostap.marks = 5;
-console.log(ostap.marks);
-console.log(ostap.getAverageMark());
+console.log('Виводимо інформацію про студента : ', ostap.getInfo());
+ostap.mark = 5;
+console.log('Виводимо інформацію про оцінки студента : ', ostap.allMarks);
+console.log('Виводимо інформацію про середню оцінку студента : ', ostap.getAverageMark());
+
+ostap.dismiss();
+console.log(`Виводимо інформацію після виключення студента : `, ostap.getInfo());
+
+
+ostap.recover();
+console.log(`Виводимо інформацію після поновлення студента : `, ostap.getInfo());
+
+
+
+
+
+
+
+
 
