@@ -1,0 +1,61 @@
+html {
+    background: url(background/background_guitar.jpg) top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 37%;
+    width: 50%;
+}
+
+#container div {
+    flex-flow: row nowrap;
+    width: 10%;
+    padding: 2% 0 2% 0;
+    background-color:rgba(221, 208, 199, 0.193);
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(245, 206, 37);
+    border: 3px solid rgba(19, 250, 81, 0.5);
+    border-radius: 5px;
+}
+
+#container div:hover {
+    transform: scale(115%);
+    border-radius: 7px;
+    border-color: rgba(11, 186, 28, 0.869);
+    box-shadow: 0 0 10px rgba(178, 105, 21, 0.662);
+    color: rgb(242, 250, 4);
+}
+
+.key-hover {
+    transform: scale(115%);
+    border-radius: 7px;
+    border-color: rgba(11, 186, 28, 0.869);
+    box-shadow: 0 0 10px rgba(178, 105, 21, 0.662);
+    color: rgb(242, 250, 4);
+}
+
+@media (max-width: 1100px) {
+    #container {
+        width: 55%;
+    }
+
+    #container div {
+        width: 10%;
+        padding: 1% 0 1% 0;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 900px) {
+    #container {
+        width: 60%;
+    }
+}
+
