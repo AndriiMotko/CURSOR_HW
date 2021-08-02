@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;400;500;600&display=swap');
+
+.post {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px 15px 25px 15px;
+    background-color: rgb(24, 34, 44);
+    border: 1px solid rgb(109, 109, 109);
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: 'Georama', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.post img, .post div {
+    margin: 0 10px 0 10px;
+}
+
+.author-photo {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+.article {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    line-height: 28px;
+}
+
+.author-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.author-nickname, .date {
+    font-weight: 600;
+    color: rgba(137, 137, 137, 0.814);
+}
+ 
+.post-text {
+    font-size: 18px;
+}
+
+.article .post-photo {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 35px;
+}
+
+@media (max-width: 650px) {
+    .post {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .author-photo {
+        width: 15%;
+        height: 15%;
+        border-radius: 50%;
+    }
+
+}
